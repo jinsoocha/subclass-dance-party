@@ -4,7 +4,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   // var dancer = {};
   this.timeBetweenSteps = arguments[2];
   // use jQuery to create an HTML <span> tag
-  this.$node = $('<span class="dancer"></span>');
+  this.$node = $('<span class="dancer"><img src="src/tumblr_nmne8l53mn1u5ka03o1_500.gif"></img></span>');
   // dancer.step = function() {
   //   // the basic dancer doesn't do anything interesting at all on each step,
   //   // it just schedules the next step
@@ -28,13 +28,12 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   // // this one sets the position to some random default point within the body
   // dancer.setPosition(top, left);
   this.setPosition(top, left);
-  // return dancer;
+
 };
 
 makeDancer.prototype.constructor = makeDancer;
 
 makeDancer.prototype.step = function() {
-  console.log("2")
   // console.log(this)
   var context = this;
   setTimeout(context.step.bind(this), context.timeBetweenSteps);
