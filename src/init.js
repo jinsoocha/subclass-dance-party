@@ -37,9 +37,9 @@ $(document).ready(function() {
       window.clearInterval(window.intervals[i]);
     }
     for(var i = 0; i < window.dancers.length; i++) {
-      var increment = i * 30;
+      var increment = (i + 1) * 30;
       var syntax = increment + "px";
-      window.dancers[i].animate({"top": syntax,"left": syntax},"slow");  
+      window.dancers[i].animate({"top": "100px", "left": syntax},"slow");  
     }   
   });
 
