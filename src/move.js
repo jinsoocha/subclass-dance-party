@@ -14,6 +14,8 @@ movePlanet.prototype.step = function() {
   	newposition["top"] = Math.floor(($(window).height() -300) * Math.random());
   	newposition["left"] = Math.floor(($(window).width() -300) * Math.random());
     context.$node.animate(newposition,"slow");
+    context.$node.top = newposition["top"];
+    context.$node.left = newposition["left"];
   }, 1000);
   window.intervals.push(moveInterval);
 

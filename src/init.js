@@ -10,12 +10,12 @@ $(document).ready(function() {
      * maker functions available in the global scope, clicking that node
      * will call the function to make the dancer.
      */
-
+                                    
     /* dancerMakerFunctionName is a string which must match
      * one of the dancer maker functions available in global scope.
      * A new object of the given type will be created and added
      * to the stage.
-     */
+     */                                                                                                                                                                                               
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
     // get the maker function for the kind of dancer we're supposed to make
@@ -28,7 +28,9 @@ $(document).ready(function() {
       $(window).height() * Math.random(),
       $(window).width() * Math.random()
     );
+
     window.dancers.push(dancer.$node);
+
     $('body').append(dancer.$node);
   });
 
@@ -40,6 +42,8 @@ $(document).ready(function() {
       var increment = (i + 1) * 30;
       var syntax = increment + "px";
       window.dancers[i].animate({"top": "100px", "left": syntax},"slow");  
+      window.dancers[i].top = 100;
+      window.dancers[i].left = increment;
     }   
   });
 
@@ -47,9 +51,13 @@ $(document).ready(function() {
     for(var i = 0; i < window.intervals.length; i++) {
       window.clearInterval(window.intervals[i]);
     }
-    for(var i = 0; i < window.dancers.length-1; i++) {
-    
-    }   
+    for(var i = 0; i < window.dancers.length-1; i=i+2) {
+      var top = window.dancers[i].top;
+      var left = window.dancers[i].left + 50; 
+      window.dancers[i].children().animate({"height":"300px"},"slow");
+      window.dancers[i+1].animate({"top":top,"left":left},"slow");
+
+    } 
   });
 
 

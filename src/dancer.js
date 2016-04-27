@@ -4,6 +4,8 @@ var makeDancer = function(top, left) {
   // var dancer = {};
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"><img src="planet.gif"></img></span>');
+  this.$node.top = top;
+  this.$node.left = left;
   // dancer.step = function() {
   //   // the basic dancer doesn't do anything interesting at all on each step,
   //   // it just schedules the next step

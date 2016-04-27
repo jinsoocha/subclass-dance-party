@@ -31,5 +31,5 @@ blinkPlanet.prototype.step = function() {
   var blinkInterval = setInterval(function(){    
     context.$node.toggle();
   },50);
-  window.intervals.push(blinkInterval);
+  // window.intervals.push(blinkInterval);
 };
