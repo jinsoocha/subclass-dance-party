@@ -1,4 +1,4 @@
-var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
+var blinkPlanet = function(top, left) {
   // var blinkyDancer = new makeDancer(top, left, timeBetweenSteps);
   makeDancer.apply(this, arguments);
 
@@ -25,10 +25,11 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 // };
 };
 
-makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
-makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
-makeBlinkyDancer.prototype.step = function() {
-
-  makeDancer.prototype.step.call(this);
-  this.$node.toggle();
+blinkPlanet.prototype = Object.create(makeDancer.prototype);
+blinkPlanet.prototype.step = function() {
+  var context = this;
+  var blinkInterval = setInterval(function(){    
+    context.$node.toggle();
+  },50);
+  // window.intervals.push(blinkInterval);
 };
